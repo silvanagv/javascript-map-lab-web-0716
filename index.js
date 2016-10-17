@@ -21,3 +21,22 @@ const zebraStripes = [
   { width: 0.59, color: null },
   { width: 7.31, color: null },
 ];
+
+// coloredZebraStripes = zebraStripes.map(stripe => stripe.color)
+
+function shallowCopy(originalObject){
+var newRobots = {}
+var key
+for (key in originalObject){
+  newRobots[key] = originalObject[key]
+}
+  return newRobots
+}
+ let sortedRobots = robots.map(robot => {if (knownDecepticons.includes(robot.name))
+{ return Object.assign(shallowCopy(robot), {alliance: 'decepticon'})
+}
+else {
+   return Object.assign(shallowCopy(robot), {alliance: 'autobot'})
+}})
+ console.log(shallowCopy(robots))
+ console.log(robots)
